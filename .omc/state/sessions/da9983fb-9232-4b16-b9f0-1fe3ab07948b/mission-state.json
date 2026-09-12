@@ -1,0 +1,81 @@
+{
+  "updatedAt": "2026-09-01T20:38:33.311Z",
+  "missions": [
+    {
+      "id": "session:da9983fb-9232-4b16-b9f0-1fe3ab07948b:none",
+      "source": "session",
+      "name": "none",
+      "objective": "Session mission",
+      "createdAt": "2026-09-01T20:37:58.956Z",
+      "updatedAt": "2026-09-01T20:38:33.311Z",
+      "status": "running",
+      "workerCount": 3,
+      "taskCounts": {
+        "total": 3,
+        "pending": 0,
+        "blocked": 0,
+        "inProgress": 3,
+        "completed": 0,
+        "failed": 0
+      },
+      "agents": [
+        {
+          "name": "mod-09-17:amod-09",
+          "role": "mod-09-17",
+          "ownership": "amod-09-17-857986cb6a614de6",
+          "status": "running",
+          "currentStep": null,
+          "latestUpdate": null,
+          "completedSummary": null,
+          "updatedAt": "2026-09-01T20:37:58.956Z"
+        },
+        {
+          "name": "mod-18-26:amod-18",
+          "role": "mod-18-26",
+          "ownership": "amod-18-26-b1c1e52ac303459d",
+          "status": "running",
+          "currentStep": null,
+          "latestUpdate": null,
+          "completedSummary": null,
+          "updatedAt": "2026-09-01T20:38:10.088Z"
+        },
+        {
+          "name": "code-audit-2:acode-a",
+          "role": "code-audit-2",
+          "ownership": "acode-audit-2-261f88eccb04638d",
+          "status": "running",
+          "currentStep": null,
+          "latestUpdate": null,
+          "completedSummary": null,
+          "updatedAt": "2026-09-01T20:38:33.311Z"
+        }
+      ],
+      "timeline": [
+        {
+          "id": "session-start:amod-09-17-857986cb6a614de6:2026-09-01T20:37:58.956Z",
+          "at": "2026-09-01T20:37:58.956Z",
+          "kind": "update",
+          "agent": "mod-09-17:amod-09",
+          "detail": "started mod-09-17:amod-09",
+          "sourceKey": "session-start:amod-09-17-857986cb6a614de6"
+        },
+        {
+          "id": "session-start:amod-18-26-b1c1e52ac303459d:2026-09-01T20:38:10.088Z",
+          "at": "2026-09-01T20:38:10.088Z",
+          "kind": "update",
+          "agent": "mod-18-26:amod-18",
+          "detail": "started mod-18-26:amod-18",
+          "sourceKey": "session-start:amod-18-26-b1c1e52ac303459d"
+        },
+        {
+          "id": "session-start:acode-audit-2-261f88eccb04638d:2026-09-01T20:38:33.311Z",
+          "at": "2026-09-01T20:38:33.311Z",
+          "kind": "update",
+          "agent": "code-audit-2:acode-a",
+          "detail": "started code-audit-2:acode-a",
+          "sourceKey": "session-start:acode-audit-2-261f88eccb04638d"
+        }
+      ]
+    }
+  ]
+}

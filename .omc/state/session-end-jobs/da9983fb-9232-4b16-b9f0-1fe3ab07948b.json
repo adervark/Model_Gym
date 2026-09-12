@@ -1,0 +1,335 @@
+{
+  "version": 1,
+  "jobId": "21a3c365-5407-4437-9793-08a8e0945f90",
+  "sessionId": "da9983fb-9232-4b16-b9f0-1fe3ab07948b",
+  "scopeKey": "da7bc4262dd4583c7ce8ac062287b7860ad5ad32dc18e40a565a8c1272512fa9",
+  "revision": 44,
+  "createdAt": "2026-09-01T20:39:11.718Z",
+  "updatedAt": "2026-09-01T20:39:14.187Z",
+  "producerGraceExpiresAt": "2026-09-01T20:39:41.718Z",
+  "bestEffortDeadlineAt": "2026-09-01T20:40:32.718Z",
+  "producers": {
+    "core": {
+      "state": "sealed",
+      "intentKey": "e72e17ed1a673a5b886eb7ac03f096b9bcb474fab98c1102badb61d329e97b3f",
+      "payloadDigest": "e72e17ed1a673a5b886eb7ac03f096b9bcb474fab98c1102badb61d329e97b3f",
+      "sealedAt": "2026-09-01T20:39:12.826Z",
+      "sealedBy": "foreground"
+    },
+    "wiki": {
+      "state": "no-op",
+      "sealedAt": "2026-09-01T20:39:11.718Z",
+      "sealedBy": "wiki-producer"
+    }
+  },
+  "actions": {
+    "foreground-cleanup": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "completed",
+      "attempts": 0,
+      "idempotencyKey": "febf6dba2f2536433960a07f7cedce72e946b43ced0896570df80f017b8914d2",
+      "payload": {
+        "transcriptPath": "/home/ade/.claude-k/projects/-home-ade-Code-DLcourse/da9983fb-9232-4b16-b9f0-1fe3ab07948b.jsonl",
+        "cwd": "/home/ade/Code/DLcourse",
+        "reason": "other",
+        "input": {
+          "session_id": "da9983fb-9232-4b16-b9f0-1fe3ab07948b",
+          "transcript_path": "/home/ade/.claude-k/projects/-home-ade-Code-DLcourse/da9983fb-9232-4b16-b9f0-1fe3ab07948b.jsonl",
+          "cwd": "/home/ade/Code/DLcourse",
+          "scratchpad_dir": "/tmp/claude-1000/-home-ade-Code-DLcourse/da9983fb-9232-4b16-b9f0-1fe3ab07948b/scratchpad",
+          "prompt_id": "5d21dde8-dd6d-4d13-9108-0bfcb167e0fa",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "metrics": {
+          "session_id": "da9983fb-9232-4b16-b9f0-1fe3ab07948b",
+          "ended_at": "2026-09-01T20:39:11.712Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        },
+        "initialTeamNames": [],
+        "openClawEnabled": false,
+        "openClawRouting": {},
+        "foregroundResult": {
+          "removedTransientFiles": 2,
+          "completedAt": "2026-09-01T20:39:12.825Z"
+        }
+      },
+      "budgetMs": 9000,
+      "completedAt": "2026-09-01T20:39:12.826Z",
+      "lastOutcomeCode": "completed"
+    },
+    "wiki-capture": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "completed",
+      "attempts": 0,
+      "idempotencyKey": "1719cd1ef5b51e0269b78c4cb8c9308c9c1f7b82fd1c067fc034c060f23863f5",
+      "payload": {},
+      "budgetMs": 9000,
+      "completedAt": "2026-09-01T20:39:11.718Z"
+    },
+    "team-cleanup": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "cee6ac31df545408e1e822247ac249b3f8182a98a5fe8e448ae3b251e55bdee1",
+      "payload": {
+        "transcriptPath": "/home/ade/.claude-k/projects/-home-ade-Code-DLcourse/da9983fb-9232-4b16-b9f0-1fe3ab07948b.jsonl",
+        "cwd": "/home/ade/Code/DLcourse",
+        "reason": "other",
+        "input": {
+          "session_id": "da9983fb-9232-4b16-b9f0-1fe3ab07948b",
+          "transcript_path": "/home/ade/.claude-k/projects/-home-ade-Code-DLcourse/da9983fb-9232-4b16-b9f0-1fe3ab07948b.jsonl",
+          "cwd": "/home/ade/Code/DLcourse",
+          "scratchpad_dir": "/tmp/claude-1000/-home-ade-Code-DLcourse/da9983fb-9232-4b16-b9f0-1fe3ab07948b/scratchpad",
+          "prompt_id": "5d21dde8-dd6d-4d13-9108-0bfcb167e0fa",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "metrics": {
+          "session_id": "da9983fb-9232-4b16-b9f0-1fe3ab07948b",
+          "ended_at": "2026-09-01T20:39:11.712Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        },
+        "initialTeamNames": [],
+        "openClawEnabled": false,
+        "openClawRouting": {}
+      },
+      "budgetMs": 9000,
+      "claimedAt": "2026-09-01T20:39:12.947Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "3cc18f89-7192-49ea-add4-c011b3baaf83",
+        "phase": "terminal",
+        "deadlineAt": "2026-09-01T20:39:22.928Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-09-01T20:39:13.128Z"
+    },
+    "python-cleanup": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "1f1370c4ac056606059d517e2f106b602d8cbcb04587b3fcc5f3b9f89e649cd0",
+      "payload": {
+        "transcriptPath": "/home/ade/.claude-k/projects/-home-ade-Code-DLcourse/da9983fb-9232-4b16-b9f0-1fe3ab07948b.jsonl",
+        "cwd": "/home/ade/Code/DLcourse",
+        "reason": "other",
+        "input": {
+          "session_id": "da9983fb-9232-4b16-b9f0-1fe3ab07948b",
+          "transcript_path": "/home/ade/.claude-k/projects/-home-ade-Code-DLcourse/da9983fb-9232-4b16-b9f0-1fe3ab07948b.jsonl",
+          "cwd": "/home/ade/Code/DLcourse",
+          "scratchpad_dir": "/tmp/claude-1000/-home-ade-Code-DLcourse/da9983fb-9232-4b16-b9f0-1fe3ab07948b/scratchpad",
+          "prompt_id": "5d21dde8-dd6d-4d13-9108-0bfcb167e0fa",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "metrics": {
+          "session_id": "da9983fb-9232-4b16-b9f0-1fe3ab07948b",
+          "ended_at": "2026-09-01T20:39:11.712Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        },
+        "initialTeamNames": [],
+        "openClawEnabled": false,
+        "openClawRouting": {}
+      },
+      "budgetMs": 9000,
+      "claimedAt": "2026-09-01T20:39:13.150Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "ea8fa49c-a6a8-4511-accf-1fdc75de696b",
+        "phase": "terminal",
+        "deadlineAt": "2026-09-01T20:39:22.928Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-09-01T20:39:13.343Z"
+    },
+    "reply-cleanup": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "0b3a8b47c28b26d56aca004d4f572b96c118f16819c0d35162418816f9a5420a",
+      "payload": {
+        "transcriptPath": "/home/ade/.claude-k/projects/-home-ade-Code-DLcourse/da9983fb-9232-4b16-b9f0-1fe3ab07948b.jsonl",
+        "cwd": "/home/ade/Code/DLcourse",
+        "reason": "other",
+        "input": {
+          "session_id": "da9983fb-9232-4b16-b9f0-1fe3ab07948b",
+          "transcript_path": "/home/ade/.claude-k/projects/-home-ade-Code-DLcourse/da9983fb-9232-4b16-b9f0-1fe3ab07948b.jsonl",
+          "cwd": "/home/ade/Code/DLcourse",
+          "scratchpad_dir": "/tmp/claude-1000/-home-ade-Code-DLcourse/da9983fb-9232-4b16-b9f0-1fe3ab07948b/scratchpad",
+          "prompt_id": "5d21dde8-dd6d-4d13-9108-0bfcb167e0fa",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "metrics": {
+          "session_id": "da9983fb-9232-4b16-b9f0-1fe3ab07948b",
+          "ended_at": "2026-09-01T20:39:11.712Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        },
+        "initialTeamNames": [],
+        "openClawEnabled": false,
+        "openClawRouting": {}
+      },
+      "budgetMs": 9000,
+      "claimedAt": "2026-09-01T20:39:13.364Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "145f931f-2b58-4ee0-abbe-fad4c6dc6119",
+        "phase": "terminal",
+        "deadlineAt": "2026-09-01T20:39:22.928Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-09-01T20:39:13.553Z"
+    },
+    "callback": {
+      "class": "best-effort",
+      "phase": "deferred-best-effort",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "d068ede2655bf89e0c0950e087d0603d7dcf45538e94f20a654d08c6f4841895",
+      "payload": {
+        "transcriptPath": "/home/ade/.claude-k/projects/-home-ade-Code-DLcourse/da9983fb-9232-4b16-b9f0-1fe3ab07948b.jsonl",
+        "cwd": "/home/ade/Code/DLcourse",
+        "reason": "other",
+        "input": {
+          "session_id": "da9983fb-9232-4b16-b9f0-1fe3ab07948b",
+          "transcript_path": "/home/ade/.claude-k/projects/-home-ade-Code-DLcourse/da9983fb-9232-4b16-b9f0-1fe3ab07948b.jsonl",
+          "cwd": "/home/ade/Code/DLcourse",
+          "scratchpad_dir": "/tmp/claude-1000/-home-ade-Code-DLcourse/da9983fb-9232-4b16-b9f0-1fe3ab07948b/scratchpad",
+          "prompt_id": "5d21dde8-dd6d-4d13-9108-0bfcb167e0fa",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "metrics": {
+          "session_id": "da9983fb-9232-4b16-b9f0-1fe3ab07948b",
+          "ended_at": "2026-09-01T20:39:11.712Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        },
+        "initialTeamNames": [],
+        "openClawEnabled": false,
+        "openClawRouting": {}
+      },
+      "budgetMs": 2000,
+      "claimedAt": "2026-09-01T20:39:13.575Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "2c243f31-ffd8-4089-8201-21e930d72d79",
+        "phase": "terminal",
+        "deadlineAt": "2026-09-01T20:39:22.928Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-09-01T20:39:13.747Z"
+    },
+    "notification": {
+      "class": "best-effort",
+      "phase": "deferred-best-effort",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "89c0438ff63097ce04beb60efb87292ff68a7af350a0ee331f3de9dbf42d62fc",
+      "payload": {
+        "transcriptPath": "/home/ade/.claude-k/projects/-home-ade-Code-DLcourse/da9983fb-9232-4b16-b9f0-1fe3ab07948b.jsonl",
+        "cwd": "/home/ade/Code/DLcourse",
+        "reason": "other",
+        "input": {
+          "session_id": "da9983fb-9232-4b16-b9f0-1fe3ab07948b",
+          "transcript_path": "/home/ade/.claude-k/projects/-home-ade-Code-DLcourse/da9983fb-9232-4b16-b9f0-1fe3ab07948b.jsonl",
+          "cwd": "/home/ade/Code/DLcourse",
+          "scratchpad_dir": "/tmp/claude-1000/-home-ade-Code-DLcourse/da9983fb-9232-4b16-b9f0-1fe3ab07948b/scratchpad",
+          "prompt_id": "5d21dde8-dd6d-4d13-9108-0bfcb167e0fa",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "metrics": {
+          "session_id": "da9983fb-9232-4b16-b9f0-1fe3ab07948b",
+          "ended_at": "2026-09-01T20:39:11.712Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        },
+        "initialTeamNames": [],
+        "openClawEnabled": false,
+        "openClawRouting": {}
+      },
+      "budgetMs": 2000,
+      "claimedAt": "2026-09-01T20:39:13.768Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "68d618c3-47c3-4ddd-a1a2-be51e050198b",
+        "phase": "terminal",
+        "deadlineAt": "2026-09-01T20:39:22.928Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-09-01T20:39:13.942Z"
+    },
+    "openclaw": {
+      "class": "best-effort",
+      "phase": "deferred-best-effort",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "31fe8f6e1cf204e27006de511df257326fdd98655122ca437013e8779ffc735b",
+      "payload": {
+        "transcriptPath": "/home/ade/.claude-k/projects/-home-ade-Code-DLcourse/da9983fb-9232-4b16-b9f0-1fe3ab07948b.jsonl",
+        "cwd": "/home/ade/Code/DLcourse",
+        "reason": "other",
+        "input": {
+          "session_id": "da9983fb-9232-4b16-b9f0-1fe3ab07948b",
+          "transcript_path": "/home/ade/.claude-k/projects/-home-ade-Code-DLcourse/da9983fb-9232-4b16-b9f0-1fe3ab07948b.jsonl",
+          "cwd": "/home/ade/Code/DLcourse",
+          "scratchpad_dir": "/tmp/claude-1000/-home-ade-Code-DLcourse/da9983fb-9232-4b16-b9f0-1fe3ab07948b/scratchpad",
+          "prompt_id": "5d21dde8-dd6d-4d13-9108-0bfcb167e0fa",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "metrics": {
+          "session_id": "da9983fb-9232-4b16-b9f0-1fe3ab07948b",
+          "ended_at": "2026-09-01T20:39:11.712Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        },
+        "initialTeamNames": [],
+        "openClawEnabled": false,
+        "openClawRouting": {}
+      },
+      "budgetMs": 2000,
+      "claimedAt": "2026-09-01T20:39:13.963Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "591ea3a2-e54f-4555-b9fe-8cd794342415",
+        "phase": "terminal",
+        "deadlineAt": "2026-09-01T20:39:22.928Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-09-01T20:39:14.143Z"
+    }
+  },
+  "owner": null,
+  "phase": "complete",
+  "completion": {
+    "completedAt": "2026-09-01T20:39:14.165Z",
+    "terminalDigest": "b54811751b2c085dc994b3313da9912c757e8541f94b0aa2afa6fc50471de1c3",
+    "terminalRevision": 43
+  }
+}

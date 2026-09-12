@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+checkpoints/
+data/*.bin
+data/fineweb_edu*.txt
+hf-export/

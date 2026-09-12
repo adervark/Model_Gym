@@ -1,0 +1,314 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1788294513953,
+  "projectRoot": "/home/ade/Code/DLcourse",
+  "techStack": {
+    "languages": [
+      {
+        "name": "Python",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "requirements.txt"
+        ]
+      }
+    ],
+    "frameworks": [],
+    "packageManager": "pip",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "scripts",
+      "tests"
+    ],
+    "gitBranches": null
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "Implementations": {
+      "path": "Implementations",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1788294513949,
+      "keyFiles": [
+        "setup.py"
+      ]
+    },
+    "checkpoints": {
+      "path": "checkpoints",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1788294513951,
+      "keyFiles": []
+    },
+    "data": {
+      "path": "data",
+      "purpose": "Data files",
+      "fileCount": 4,
+      "lastAccessed": 1788294513951,
+      "keyFiles": [
+        "sft.jsonl",
+        "tiny_shakespeare.txt",
+        "tiny_shakespeare_train.bin",
+        "tiny_shakespeare_val.bin"
+      ]
+    },
+    "lm": {
+      "path": "lm",
+      "purpose": null,
+      "fileCount": 25,
+      "lastAccessed": 1788294513952,
+      "keyFiles": [
+        "__init__.py",
+        "agent.py",
+        "cli.py",
+        "config.py",
+        "data.py"
+      ]
+    },
+    "modules": {
+      "path": "modules",
+      "purpose": null,
+      "fileCount": 27,
+      "lastAccessed": 1788294513952,
+      "keyFiles": [
+        "00-setup.md",
+        "01-tensors-autograd.md",
+        "02-transformer.md",
+        "03-modern-architecture.md",
+        "04-tokenization.md"
+      ]
+    },
+    "scripts": {
+      "path": "scripts",
+      "purpose": "Build/utility scripts",
+      "fileCount": 11,
+      "lastAccessed": 1788294513952,
+      "keyFiles": [
+        "distill.py",
+        "download_data.sh",
+        "export_hf.py",
+        "make_sft_data.py",
+        "run_dpo.py"
+      ]
+    },
+    "tests": {
+      "path": "tests",
+      "purpose": "Test files",
+      "fileCount": 15,
+      "lastAccessed": 1788294513952,
+      "keyFiles": [
+        "conftest.py",
+        "test_cli.py",
+        "test_comprehensive.py",
+        "test_data_config.py",
+        "test_distill.py"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "lm/model.py",
+      "accessCount": 10,
+      "lastAccessed": 1786899676090,
+      "type": "file"
+    },
+    {
+      "path": "tests/test_optim_dapo.py",
+      "accessCount": 9,
+      "lastAccessed": 1786896434721,
+      "type": "file"
+    },
+    {
+      "path": "lm/generate.py",
+      "accessCount": 9,
+      "lastAccessed": 1786900293817,
+      "type": "file"
+    },
+    {
+      "path": "lm/train.py",
+      "accessCount": 6,
+      "lastAccessed": 1786895534894,
+      "type": "file"
+    },
+    {
+      "path": "modules/19-muon-dapo.md",
+      "accessCount": 6,
+      "lastAccessed": 1786895829597,
+      "type": "file"
+    },
+    {
+      "path": "modules/15-moe.md",
+      "accessCount": 5,
+      "lastAccessed": 1786900828310,
+      "type": "file"
+    },
+    {
+      "path": "lm/runners.py",
+      "accessCount": 4,
+      "lastAccessed": 1786895243919,
+      "type": "file"
+    },
+    {
+      "path": "lm/config.py",
+      "accessCount": 4,
+      "lastAccessed": 1786895406686,
+      "type": "file"
+    },
+    {
+      "path": "tests/test_comprehensive.py",
+      "accessCount": 4,
+      "lastAccessed": 1786900416127,
+      "type": "file"
+    },
+    {
+      "path": "lm/grpo.py",
+      "accessCount": 4,
+      "lastAccessed": 1786901103790,
+      "type": "file"
+    },
+    {
+      "path": "lm/gguf_export.py",
+      "accessCount": 3,
+      "lastAccessed": 1786899578315,
+      "type": "file"
+    },
+    {
+      "path": "modules/08-scaling-laws.md",
+      "accessCount": 3,
+      "lastAccessed": 1786900948313,
+      "type": "file"
+    },
+    {
+      "path": "tests/test_posttrain.py",
+      "accessCount": 3,
+      "lastAccessed": 1786901015761,
+      "type": "file"
+    },
+    {
+      "path": "modules/01-tensors-autograd.md",
+      "accessCount": 2,
+      "lastAccessed": 1786895685214,
+      "type": "file"
+    },
+    {
+      "path": "modules/05-data-pipeline.md",
+      "accessCount": 2,
+      "lastAccessed": 1786895728860,
+      "type": "file"
+    },
+    {
+      "path": "modules/17-mla.md",
+      "accessCount": 2,
+      "lastAccessed": 1786895791187,
+      "type": "file"
+    },
+    {
+      "path": "lm/optim.py",
+      "accessCount": 2,
+      "lastAccessed": 1786895834789,
+      "type": "file"
+    },
+    {
+      "path": "modules/03-modern-architecture.md",
+      "accessCount": 2,
+      "lastAccessed": 1786895932813,
+      "type": "file"
+    },
+    {
+      "path": "modules/00-setup.md",
+      "accessCount": 2,
+      "lastAccessed": 1786896853918,
+      "type": "file"
+    },
+    {
+      "path": "tests/test_data_config.py",
+      "accessCount": 2,
+      "lastAccessed": 1786900211807,
+      "type": "file"
+    },
+    {
+      "path": "tests/test_gguf_sweep.py",
+      "accessCount": 2,
+      "lastAccessed": 1786901484534,
+      "type": "file"
+    },
+    {
+      "path": "modules/02-transformer.md",
+      "accessCount": 1,
+      "lastAccessed": 1786895690448,
+      "type": "file"
+    },
+    {
+      "path": "modules/06-pretraining.md",
+      "accessCount": 1,
+      "lastAccessed": 1786895735012,
+      "type": "file"
+    },
+    {
+      "path": "modules/13-frontier.md",
+      "accessCount": 1,
+      "lastAccessed": 1786895841068,
+      "type": "file"
+    },
+    {
+      "path": "modules/12-inference-optimization.md",
+      "accessCount": 1,
+      "lastAccessed": 1786895844753,
+      "type": "file"
+    },
+    {
+      "path": "modules/10-preference-optimization.md",
+      "accessCount": 1,
+      "lastAccessed": 1786895848871,
+      "type": "file"
+    },
+    {
+      "path": "modules/11-evaluation.md",
+      "accessCount": 1,
+      "lastAccessed": 1786895853162,
+      "type": "file"
+    },
+    {
+      "path": "STUDY-GUIDE.md",
+      "accessCount": 1,
+      "lastAccessed": 1786895857576,
+      "type": "file"
+    },
+    {
+      "path": "lm/cli.py",
+      "accessCount": 1,
+      "lastAccessed": 1786895880461,
+      "type": "file"
+    },
+    {
+      "path": "README.md",
+      "accessCount": 1,
+      "lastAccessed": 1786901093570,
+      "type": "file"
+    },
+    {
+      "path": "modules/22-serving-scaling.md",
+      "accessCount": 1,
+      "lastAccessed": 1786901565967,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

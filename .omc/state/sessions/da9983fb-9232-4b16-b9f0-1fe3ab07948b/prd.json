@@ -1,0 +1,179 @@
+{
+  "title": "LM-From-Zero course: full correctness + quality review",
+  "task": "review all this I want this to be insanely good",
+  "createdAt": "2026-09-02",
+  "stories": [
+    {
+      "id": "US-001",
+      "title": "Fix inverted top-p (nucleus) mask in lm/generate.py",
+      "priority": 1,
+      "passes": false,
+      "acceptanceCriteria": [
+        "lm/generate.py generate() keeps the smallest prefix of sorted tokens whose cumulative mass exceeds top_p and sets ALL OTHER logits to -inf (currently inverted: it -infs the nucleus and samples the tail)",
+        "A new test asserts that with a sharply peaked logit vector, generate() at low top_p returns only tokens inside the nucleus (would fail on the pre-fix code)",
+        "test_generate_top_p_near_one_does_not_collapse still passes",
+        "test_generate_never_samples_padded_vocab still passes"
+      ]
+    },
+    {
+      "id": "US-002",
+      "title": "Fix inverted iterative-unmasking schedule in lm/mdlm.py",
+      "priority": 1,
+      "passes": false,
+      "acceptanceCriteria": [
+        "mdlm_generate reveals a monotonically non-decreasing number of tokens across steps and finishes only at the final step (currently reveals ~80% on step 1 and no-ops on steps 2..n-1)",
+        "A new test asserts that after step i of `steps`, the number of still-masked positions is approximately L*(1 - i/steps)",
+        "mdlm_generate with a prompt keeps the prompt clean and the schedule accounts for prompt tokens already known",
+        "tests/test_mdlm.py passes in full"
+      ]
+    },
+    {
+      "id": "US-003",
+      "title": "Fix ValueHead masking poisoning GAE in lm/rm.py",
+      "priority": 1,
+      "passes": false,
+      "acceptanceCriteria": [
+        "ValueHead.forward no longer emits -1e9 at masked positions (which propagates through gae() and yields |advantage| ~ 1e7 at REAL completion positions when the batch has trailing padding)",
+        "A new test builds a batch with trailing padding, runs gae() over ValueHead output, and asserts all advantages at unmasked positions are finite and O(1)",
+        "test_gae_shapes_and_baseline and test_ppo_step_runs still pass"
+      ]
+    },
+    {
+      "id": "US-004",
+      "title": "Remove dead/no-op code paths in lm/rm.py",
+      "priority": 2,
+      "passes": false,
+      "acceptanceCriteria": [
+        "`hidden = self.lm(x)[0] if False else self._last_hidden(x)` is replaced by a direct call",
+        "bradley_terry_loss's `margin` parameter either does something or is removed (currently `diff if not margin else diff` — both branches identical)",
+        "The duplicated _last_hidden implementation in RewardModel and ValueHead is shared, not copy-pasted",
+        "ppo_step computes the policy log-probs once instead of three separate forward passes, and its KL term is documented honestly",
+        "grep -n 'if False' lm/ returns nothing"
+      ]
+    },
+    {
+      "id": "US-005",
+      "title": "Fix lm/mamba.py: device-broken hybrid + block that contradicts its docstring",
+      "priority": 1,
+      "passes": false,
+      "acceptanceCriteria": [
+        "MambaHybrid computes RoPE freqs once (registered buffer or cached) on the model's device instead of rebuilding a CPU tensor on every forward",
+        "A new test runs MambaHybrid forward and asserts freqs live on the same device as the parameters (guards the CUDA crash)",
+        "MambaBlock's forward matches its own docstring: separate x/gate branches from in_proj, SiLU after the depthwise conv, gate applied to the OTHER branch",
+        "MambaBlock's x_proj no longer allocates an unused +1 output dimension",
+        "tests/test_comprehensive.py::TestMamba passes and a new test asserts MambaModel is causal (position t's logits do not change when tokens after t change)"
+      ]
+    },
+    {
+      "id": "US-006",
+      "title": "Fix GPTQ calibration in lm/quant.py",
+      "priority": 2,
+      "passes": false,
+      "acceptanceCriteria": [
+        "gptq_model accumulates calibration activations across all calibration batches instead of keeping only the last one (current hook overwrites inputs[name] every forward, so the '~8 calibration batches' loop is a no-op)",
+        "A new test asserts the captured calibration matrix has rows from more than one batch",
+        "Int8Linear's docstring no longer claims W8A8 when only weights are quantized",
+        "NF4.quantize no longer writes the unused `cls._block` class attribute",
+        "tests/test_lora_quant.py passes in full"
+      ]
+    },
+    {
+      "id": "US-007",
+      "title": "Make --profile actually profile in lm/train.py",
+      "priority": 2,
+      "passes": false,
+      "acceptanceCriteria": [
+        "The torch profiler is started and stopped (context manager or explicit start/stop) so prof.step() is legal, and a trace/table is emitted at the end",
+        "A test runs a short train() with profile=True and asserts it completes and produces profiler output",
+        "Unused imports (json, torch.nn.functional as F, _VOCAB_SIZE) are removed from lm/train.py",
+        "Resuming loads the checkpoint once, not twice"
+      ]
+    },
+    {
+      "id": "US-008",
+      "title": "Fix device-parameter overrides and speculative-decoding cache desync",
+      "priority": 2,
+      "passes": false,
+      "acceptanceCriteria": [
+        "speculative_generate no longer overwrites its `device` argument with a global cuda check",
+        "agent_loop no longer overwrites its `device` argument",
+        "speculative_generate does not feed an already-cached token to the draft when the draft loop breaks on an out-of-vocab sample (draft cache and draft_ids stay consistent)",
+        "tests/test_comprehensive.py::TestSpeculative passes in full"
+      ]
+    },
+    {
+      "id": "US-009",
+      "title": "Fix tie_embeddings init clobber in lm/model.py",
+      "priority": 2,
+      "passes": false,
+      "acceptanceCriteria": [
+        "With tie_embeddings=True the shared weight is initialized with the embedding std (init_std), not the residual-scaled Linear std applied afterwards by Module.apply ordering",
+        "A test asserts the tied weight's std is within tolerance of init_std, and that untied models keep the residual-scaled head init"
+      ]
+    },
+    {
+      "id": "US-010",
+      "title": "Supervise the image->first-caption-token transition in lm/vlm.py",
+      "priority": 2,
+      "passes": false,
+      "acceptanceCriteria": [
+        "Transformer.forward's prefix_embeds target padding leaves the LAST prefix position supervised with the first text token, instead of -100 (currently the image->first token transition is never trained)",
+        "A test asserts the VLM loss changes when only the first caption token changes",
+        "tests/test_sae_vlm.py::TestVLM passes in full, including test_loss_only_on_text"
+      ]
+    },
+    {
+      "id": "US-011",
+      "title": "Correct the serving demo's decode step in lm/serving.py",
+      "priority": 2,
+      "passes": false,
+      "acceptanceCriteria": [
+        "ContinuousBatcher keeps a real per-batch KV cache across decode steps so each request's next token is conditioned on its full history (currently `cache=None` with a 1-token input, so every step conditions on one token)",
+        "The misleading comment '1 token: no cache needed' is gone",
+        "A test asserts that two batcher steps produce logits that depend on the earlier tokens (cache is actually used)",
+        "tests/test_comprehensive.py::TestServing passes in full"
+      ]
+    },
+    {
+      "id": "US-012",
+      "title": "Clean up dead code, wrong comments, and slop across lm/",
+      "priority": 3,
+      "passes": false,
+      "acceptanceCriteria": [
+        "lm/lora.py's math_sqrt5() indirection is removed in favour of a module-level `import math`",
+        "lm/vlm.py's `IMG_TOKEN_ID = None  # not used` is removed",
+        "lm/data.py: the wrong '0.5M vocab fits uint16' comment is corrected, the unused `split` parameter and unused `tokenize_doc` import are removed, and TokenizedFile raises a clear error when the .bin is shorter than seq_len+1",
+        "lm/sae.py encode() scatters along the last dim so it works for both [N,f] and [B,T,f]",
+        "lm/dpo.py: kto_loss's meaningless F.kl_div over a per-sequence 1-D tensor is replaced with a correct reference point, and simpo_loss's docstring no longer double-counts the 1/|y| normalization",
+        "lm/grpo.py code_reward uses sys.executable rather than bare 'python'",
+        "lm/agent.py Calculator rejects '**' (or otherwise bounds the expression) so a generated `9**9**9` cannot hang the loop",
+        "The empty Implementations/setup.py + stray Implementations/.venv cruft is removed or explained",
+        "`python -m compileall lm scripts` succeeds and no unused imports remain in the files touched"
+      ]
+    },
+    {
+      "id": "US-013",
+      "title": "Course modules 00-26 reviewed for technical accuracy against the code",
+      "priority": 2,
+      "passes": false,
+      "acceptanceCriteria": [
+        "Every module's claims about lm/ APIs (function names, arguments, config fields) are verified to exist and behave as described",
+        "Every runnable snippet in the modules is executed or statically checked; broken snippets are fixed",
+        "Factual/technical errors (numbers, formulas, paper attributions, architecture claims) are corrected with the correct value",
+        "Any module text describing behaviour changed by US-001..US-012 is updated to match"
+      ]
+    },
+    {
+      "id": "US-014",
+      "title": "Regression tests lock in every fix and the suite passes clean",
+      "priority": 1,
+      "passes": false,
+      "acceptanceCriteria": [
+        "Each new test in US-001..US-011 fails on the pre-fix code and passes after (verified by reverting the fix or by direct reasoning recorded in progress.txt)",
+        "`python -m pytest -q` passes with 0 failures and 0 errors",
+        "The README's test-count claim matches the actual collected count",
+        "No test is skipped, deleted, or weakened to make the suite green"
+      ]
+    }
+  ]
+}

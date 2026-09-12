@@ -1,0 +1,9 @@
+torch>=2.4
+datasets>=2.20
+pyarrow==21.0.0   # pin: datasets streaming crashes at GC with pyarrow>=24
+tiktoken
+transformers>=4.44
+accelerate
+numpy
+tqdm
+pytest            # tests/

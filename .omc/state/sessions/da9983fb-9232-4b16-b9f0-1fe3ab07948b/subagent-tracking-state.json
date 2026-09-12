@@ -1,0 +1,29 @@
+{
+  "agents": [
+    {
+      "agent_id": "amod-09-17-857986cb6a614de6",
+      "agent_type": "mod-09-17",
+      "started_at": "2026-09-01T20:37:58.956Z",
+      "parent_mode": "none",
+      "status": "running"
+    },
+    {
+      "agent_id": "amod-18-26-b1c1e52ac303459d",
+      "agent_type": "mod-18-26",
+      "started_at": "2026-09-01T20:38:10.088Z",
+      "parent_mode": "none",
+      "status": "running"
+    },
+    {
+      "agent_id": "acode-audit-2-261f88eccb04638d",
+      "agent_type": "code-audit-2",
+      "started_at": "2026-09-01T20:38:33.311Z",
+      "parent_mode": "none",
+      "status": "running"
+    }
+  ],
+  "total_spawned": 3,
+  "total_completed": 0,
+  "total_failed": 0,
+  "last_updated": "2026-09-01T20:38:33.413Z"
+}

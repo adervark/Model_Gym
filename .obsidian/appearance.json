@@ -1,0 +1,8 @@
+{
+  "accentColor": "#266bd9",
+  "cssTheme": "Minimal",
+  "nativeMenus": false,
+  "baseFontSize": 22,
+  "baseFontSizeAction": true,
+  "showRibbon": true
+}

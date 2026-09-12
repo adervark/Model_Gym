@@ -1,0 +1,72 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": true,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "path:\"AI Atlas\"",
+      "color": {
+        "a": 1,
+        "rgb": 2718207
+      }
+    },
+    {
+      "query": "path:\"Computer Science Atlas\"",
+      "color": {
+        "a": 1,
+        "rgb": 58998
+      }
+    },
+    {
+      "query": "path:\"Mathematics Atlas\"",
+      "color": {
+        "a": 1,
+        "rgb": 11141375
+      }
+    },
+    {
+      "query": "path:\"Software Engineering Atlas\"",
+      "color": {
+        "a": 1,
+        "rgb": 16766464
+      }
+    },
+    {
+      "query": "path:\"Quant Atlas\"",
+      "color": {
+        "a": 1,
+        "rgb": 16717636
+      }
+    },
+    {
+      "query": "path:\"Dashboard\"",
+      "color": {
+        "a": 1,
+        "rgb": 16777215
+      }
+    },
+    {
+      "query": "path:Projects/wLLM  ",
+      "color": {
+        "a": 1,
+        "rgb": 11621088
+      }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1.00598958333333,
+  "lineSizeMultiplier": 1.05703125,
+  "collapse-forces": false,
+  "centerStrength": 0.309895833333333,
+  "repelStrength": 10.4166666666667,
+  "linkStrength": 0.796875,
+  "linkDistance": 329,
+  "scale": 0.8724959642778647,
+  "close": false
+}

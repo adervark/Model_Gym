@@ -1,0 +1,17 @@
+{
+  "pathToPandoc": "",
+  "tooltipDelay": 400,
+  "zoteroGroups": [
+    {
+      "id": 1,
+      "name": "My Library",
+      "lastUpdate": 1787113208424
+    }
+  ],
+  "renderCitations": true,
+  "renderCitationsReadingMode": true,
+  "renderLinkCitations": true,
+  "pullFromZotero": true,
+  "cslStylePath": "",
+  "cslStyleURL": "https://raw.githubusercontent.com/citation-style-language/styles/master/ieee.csl"
+}

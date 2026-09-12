@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"pkill -f \\\"pytest tests/ -q -rs\\\" 2>/dev/null; sleep 1; ps aux | grep -c \\\"[p]ytest\\\"\",\"timeout\":60000,\"description\":\"Stop stale background run\"}",
+  "error": "Exit code 144",
+  "timestamp": "2026-08-16T17:32:30.556Z",
+  "retry_count": 1
+}
